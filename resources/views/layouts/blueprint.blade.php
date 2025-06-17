@@ -17,6 +17,9 @@
     <script defer src="{{ asset('js/dropdownlist.js') }}"></script>
     <script defer src="{{ asset('js/recipeadd.js') }}"></script>
     <script defer src="{{ asset('js/modal.js') }}"></script>
+    <script defer src="{{ asset('js/recipedelete.js') }}"></script>
+    <script defer src="{{ asset('js/search.js') }}"></script>
+
     <title>ВкусДома кулинарные рецепты</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
@@ -24,18 +27,31 @@
 </head>
 
 <body>
-    @include('partials.header')
-    <main>
-        <div class="autoFormfon">
-        </div>
-        @yield(section: 'index')
-        @yield('category')
-        @yield('contact')
-        @yield('fastfood')
-        @include('partials.dropdownMenu')
-    </main>
-    @include('partials.authorization')
+    <div class="wrapper">
+        @include('partials.header')
+        <main>
+            <div class="autoFormfon">
+            </div>
+            @yield(section: 'index')
+            @yield('category')
+            @yield('contact')
+            @yield('fastfood')
+            @include('partials.dropdownMenu')
+        </main>
+        @include('partials.footer')
+        @include('partials.authorization')
 </body>
-@include('partials.footer')
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        @if ($errors->has('email') || $errors->has('password'))
+            document.querySelector(".autoFormfon").classList.add("open");
+            document.getElementById("loginForm").classList.add("open");
+        @elseif ($errors->has('name'))
+            document.querySelector(".autoFormfon").classList.add("open");
+            document.getElementById("registerForm").classList.add("open");
+        @endif
+    });
+</script>
 
 </html>

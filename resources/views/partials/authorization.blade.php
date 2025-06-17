@@ -1,30 +1,47 @@
-<!--Авторизация-->
-<form id="authForm" action="./index.html" method="POST">
-    <div class="authorizationForm">
-        <div class="authclosebtn">X</div>
-        <div class="authorizationFormat">Авторизация</div>
-        <div class="authorizationInput">
-            <input class="email" id="email" type="email" placeholder="email..." required>
-            <input class="password" id="password" type="password" placeholder="pass..." required>
-        </div>
-        <div class="authbtn">
-            <button class="authorizationBtn" id="authorizationBtn" type="submit">Войти</button>
-            <a class="authorizationchoice" href="#">Ещё нет аккаунта?</a>
-        </div>
+<form id="loginForm" class="authorizationForm" action="{{ route('login') }}" method="POST">
+    @csrf
+    <div class="authclosebtn">X</div>
+    <div class="authorizationFormat">Авторизация</div>
+    <div class="authorizationInput">
+        <input name="email" type="email" placeholder="email..." value="{{ old('email') }}" required>
+        @if ($errors->has('email'))
+            <div class="error">{{ $errors->first('email') }}</div>
+        @endif
+
+        <input name="password" type="password" placeholder="pass..." required>
+        @if ($errors->has('password'))
+            <div class="error">{{ $errors->first('password') }}</div>
+        @endif
+    </div>
+    <div class="authbtn">
+        <button class="authorizationBtn" type="submit">Войти</button>
+        <a class="authorizationchoice" id="registerChoice" href="#">Ещё нет аккаунта?</a>
     </div>
 </form>
-<!--Регистрация-->
-<form id="authForm" action="./index.html" method="POST">
-    <div class="authorizationForm">
-        <div class="authclosebtn">X</div>
-        <div class="authorizationFormat">Регистрация</div>
-        <div class="authorizationInput">
-            <input class="email" id="email" type="email" placeholder="email..." required>
-            <input class="password" id="password" type="password" placeholder="pass..." required>
-        </div>
-        <div class="authbtn">
-            <button class="authorizationBtn" id="authorizationBtn" type="submit">Регистрация</button>
-            <a class="authorizationchoice" href="#">Уже есть аккаунт?</a>
-        </div>
+<form id="registerForm" class="authorizationForm" action="{{ route('register') }}" method="POST">
+    @csrf
+    <div class="authclosebtn">X</div>
+    <div class="authorizationFormat">Регистрация</div>
+    <div class="authorizationInput">
+        <input name="name" type="text" placeholder="Имя..." value="{{ old('name') }}" required>
+        @if ($errors->has('name'))
+            <div class="error">{{ $errors->first('name') }}</div>
+        @endif
+
+        <input name="email" type="email" placeholder="email..." value="{{ old('email') }}" required>
+        @if ($errors->has('email'))
+            <div class="error">{{ $errors->first('email') }}</div>
+        @endif
+
+        <input name="password" type="password" placeholder="Пароль..." required>
+        @if ($errors->has('password'))
+            <div class="error">{{ $errors->first('password') }}</div>
+        @endif
+
+        <input name="password_confirmation" type="password" placeholder="Повторите пароль..." required>
+    </div>
+    <div class="authbtn">
+        <button class="authorizationBtn" type="submit">Регистрация</button>
+        <a class="authorizationchoice" id="loginChoice" href="#">Уже есть аккаунт?</a>
     </div>
 </form>

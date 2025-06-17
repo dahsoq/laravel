@@ -1,62 +1,44 @@
-/*Открытие формы*/
-
 document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.querySelector(".accountcab");
-  const dropdown = document.querySelector(".authorizationForm");
-  const fon = document.querySelector(".autoFormfon");
-  btn.addEventListener("click", function (event) {
-    fon.classList.toggle("open");
-    dropdown.classList.toggle("open");
-  });
-});
+    const loginForm = document.getElementById("loginForm");
+    const registerForm = document.getElementById("registerForm");
+    const overlay = document.querySelector(".autoFormfon");
 
-/*Смена формы*/
-document.addEventListener("DOMContentLoaded", function () {
-  const choices = document.querySelectorAll(".authorizationchoice");
-  const loginBtn = choices[0];
-  const registerBtn = choices[1];
-  const forms = document.querySelectorAll(".authorizationForm");
-  const loginForm = forms[0];
-  const registerForm = forms[1];
-  const closeBtns = document.querySelectorAll(".authclosebtn");
-  const overlay = document.querySelector(".autoFormfon");
+    const loginChoice = document.querySelector("#loginChoice");
+    const registerChoice = document.querySelector("#registerChoice");
 
-  loginBtn.addEventListener("click", function () {
-    registerForm.classList.toggle("open");
-    loginForm.classList.remove("open");
-  });
+    const openBtn = document.querySelector(".accountcab"); // Только если пользователь не авторизован
+    const closeBtns = document.querySelectorAll(".authclosebtn");
 
-  registerBtn.addEventListener("click", function () {
-    loginForm.classList.toggle("open");
-    registerForm.classList.remove("open");
-  });
+    // Открытие формы входа
+    if (openBtn && loginForm && registerForm && overlay) {
+        openBtn.addEventListener("click", function () {
+            overlay.classList.add("open");
+            loginForm.classList.add("open");
+            registerForm.classList.remove("open");
+        });
+    }
 
-  closeBtns.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      loginForm.classList.remove("open");
-      registerForm.classList.remove("open");
-      overlay.classList.remove("open");
+    // Переключение между формами
+    if (registerChoice && loginForm && registerForm) {
+        registerChoice.addEventListener("click", function () {
+            registerForm.classList.add("open");
+            loginForm.classList.remove("open");
+        });
+    }
+
+    if (loginChoice && loginForm && registerForm) {
+        loginChoice.addEventListener("click", function () {
+            loginForm.classList.add("open");
+            registerForm.classList.remove("open");
+        });
+    }
+
+    // Закрытие форм по кнопке "X"
+    closeBtns.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            loginForm.classList.remove("open");
+            registerForm.classList.remove("open");
+            overlay.classList.remove("open");
+        });
     });
-  });
-});
-
-/*Проверка валидности*/
-const email = document.getElementById("email");
-const passwordInput = document.getElementById("password");
-const form = document.getElementById("authForm");
-email.addEventListener("input", function (event) {
-  if (email.validity.typeMismatch) {
-    email.setCustomValidity("Проверьте ввод своей почты");
-  } else {
-    email.setCustomValidity("");
-  }
-  email.reportValidity();
-});
-form.addEventListener("submit", function (event) {
-  localStorage.email = email.value;
-  localStorage.password = passwordInput.value;
-});
-
-document.querySelector(".button1").addEventListener("click", function () {
-  window.location.href = "./recipes.html";
 });

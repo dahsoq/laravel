@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RecipeController extends Controller
 {
@@ -58,6 +59,19 @@ class RecipeController extends Controller
 
         return redirect()->route('recipe.index')->with('success', 'Рецепт успешно добавлен!');
     }
+
+
+    public function destroy($id)
+    {
+        $recipe = Recipe::findOrFail($id);
+
+   
+        $recipe->delete();
+
+        return response()->json(['message' => 'Рецепт успешно удалён']);
+    }
+
+
 
     // Возвращаем рецепт с деталями и ингредиентами в формате JSON (для JS)
     public function showJson($id)
