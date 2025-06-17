@@ -1,0 +1,836 @@
+/* Общее */
+
+a {
+    color: black;
+}
+
+.main,
+.resep,
+.blog,
+.con {
+    visibility: visible;
+    color: black;
+    font-size: 24px;
+}
+
+.firstlogo,
+.secondlogo {
+    font-size: 32px;
+}
+
+.secondlogo {
+    color: orange;
+    margin-left: 10px;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    color: gray;
+    width: 210px;
+}
+
+.a,
+.abtn {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+
+.abtn {
+    border: solid #ccc;
+    border-radius: 20px;
+}
+
+/* Хэдер */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+}
+
+/* Главная */
+
+.main_block {
+    background-color: #d9d9d9;
+    padding: 100px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.mh {
+    font-size: 64px;
+    text-align: center;
+}
+
+.mh2 {
+    font-size: 36px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.button1 {
+    border-radius: 20px;
+    text-align: center;
+    font-size: 24px;
+    width: 200px;
+    height: 57px;
+    background-color: #dd8117;
+    margin-top: 40px;
+}
+
+/* Контакты */
+
+.contact_block {
+    width: 552px;
+    border: 1px solid #d9d9d9;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    margin: 40px auto;
+}
+
+.contact_block img {
+    width: 70px;
+    height: 70px;
+}
+
+.ffh1,
+.contxt {
+    color: #dd8117;
+    text-align: center;
+}
+
+.ffh1 {
+    font-size: 24px;
+    margin-top: 60px;
+}
+
+.contxt {
+    font-size: 32px;
+    margin-top: 30px;
+}
+
+/* Рецепты */
+
+.recipes {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 60px;
+    flex-wrap: wrap;
+}
+
+.recipe1 {
+    width: 361px;
+    height: 450px;
+    border: solid 1px #d9d9d9;
+    border-radius: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.recipeadd {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.recipeformadd {
+    width: 90vw;
+    max-width: 600px;
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 40px;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.recipeformadd.open{
+    display:flex;
+}
+.recipeimg{
+    width:400px;
+    
+}
+.form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #d9d9d9;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.recipecount{
+    text-align: center;
+    font-size: 20px;
+}
+
+.recipeformaddclose {
+    color: red;
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.recipeaddbtn {
+    font-size: 24px;
+    border-radius: 15px;
+    background-color: #dd8117;
+}
+
+.recipe1txt,
+.recipe2txt,
+.recipe3txt {
+    font-size: 32px;
+    text-align: center;
+}
+
+.recipe1txt2,
+.recipe2txt2,
+.recipe3txt2 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.caloriesrecipe1,
+.clockrecipe1,
+.caloriesrecipe2,
+.clockrecipe2,
+.caloriesrecipe3,
+.clockrecipe3,
+.clock-warp,
+.calories-warp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.caloriesrecipe1,
+.clockrecipe1,
+.caloriesrecipe2,
+.clockrecipe2,
+.caloriesrecipe3,
+.clockrecipe3 {
+    width: 24px;
+    height: 24px;
+}
+
+.caloriesrecipe1txt,
+.clockrecipe1txt,
+.caloriesrecipe2txt,
+.clockrecipe2txt,
+.caloriesrecipe3txt,
+.clockrecipe3txt {
+    font-size: 20px;
+    font-weight: bold;
+    color: #444;
+    justify-content: center;
+}
+
+.recipe1btn,
+.recipe2btn,
+.recipe3btn {
+    margin-top: auto;
+    background-color: #dd8117;
+    border-radius: 10px;
+    padding: 10px 20px;
+}
+
+.ffrs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    justify-items: center;
+}
+
+main {
+    flex-grow: 1;
+}
+
+/* Модальные окна рецептов */
+.modalcookandtime {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    padding-bottom: 5%;
+}
+
+.modalname {
+    text-align: center;
+    font-size: 40px;
+    padding-bottom: 5%;
+}
+
+.modalcook,
+.modaltime {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ingredients,
+.instructions {
+    display: grid;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.ingredients li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+}
+
+.name {
+    flex: 1;
+}
+
+.amount {
+    text-align: right;
+    white-space: nowrap;
+}
+
+.dots {
+    flex-grow: 1;
+    border-bottom: 1px solid black;
+    margin: 0 100px;
+}
+
+.ingrli {
+    padding-left: 70%;
+}
+
+.ingr,
+.inst {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.modalimg {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+}
+
+.overlay {
+    width: 90vw;
+    max-width: 600px;
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 40px;
+    background-color: #eee;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.overlay.open {
+    display: block;
+}
+
+.close-button {
+    display: flex;
+    cursor: pointer;
+    font-size: 30px;
+    color: red;
+    justify-content: end;
+    padding-right: 5%;
+    padding-top: 2%;
+}
+
+/* Категории */
+
+.categortxt {
+    color: #dd8117;
+    font-size: 36px;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.imgcontainer {
+    width: 850px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+    justify-items: center;
+}
+
+.categorimg {
+    margin-top: 30px;
+    justify-items: center;
+}
+
+.categorimg img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s;
+}
+
+.favor {
+    font-size: 48px;
+    text-align: center;
+    margin-top: 80px;
+}
+
+.tire {
+    border: 1px solid #dd8117;
+    width: 200px;
+    margin: 20px auto;
+}
+
+.favortxt {
+    font-size: 32px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Подвал */
+
+.ftr {
+    position: relative;
+    bottom: 0;
+    background: #333;
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+}
+
+/* Выпадающее меню */
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 70px;
+    right: 90px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdown-menu.open {
+    display: block;
+}
+
+.dropdown-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.dropdown-menu li {
+    border-bottom: 1px solid #eee;
+    font-size: 20px;
+    user-select: none;
+}
+
+.dropdown-menu li:hover {
+    background-color: #ccc;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+/* Авторизация */
+
+.email,
+.password,
+.authorizationBtn {
+    display: flex;
+    border-radius: 40px;
+    border: 1px solid #d9d9d9;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.email,
+.password {
+    padding-left: 2%;
+    width: 50%;
+}
+
+.authorizationBtn {
+    width: 20%;
+}
+
+.authorizationBtn:hover {
+    background-color: white;
+}
+
+.authorizationchoice {
+    cursor: pointer;
+    padding-top: 2%;
+    font-size: 15px;
+    color: blue;
+}
+
+.authorizationFormat {
+    display: flex;
+    justify-content: center;
+    padding: 10% 0 3%;
+    font-size: 30px;
+}
+
+.authorizationInput,
+.authbtn {
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    padding-top: 5%;
+}
+
+.authorizationInput {
+    gap: 20px;
+}
+
+.authorizationForm {
+    border-radius: 40px;
+    width: 50%;
+    height: 70%;
+    background-color: #eee;
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10000;
+}
+
+.authorizationForm.open {
+    display: block;
+}
+
+.authclosebtn {
+    display: flex;
+    justify-content: end;
+    padding-right: 3%;
+    cursor: pointer;
+    color: red;
+    font-size: 30px;
+}
+
+.accountcab {
+    cursor: pointer;
+}
+
+.autoFormfon {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    z-index: 999;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.autoFormfon.open {
+    display: block;
+}
+
+.commentForm {
+    margin: 3%;
+    display: grid;
+    justify-items: center;
+}
+
+.commentbtn,
+.username,
+.commentText {
+    margin: 1%;
+    font-size: 20px;
+}
+
+.commentbtn {
+    border-radius: 20px;
+    background-color: #dd8117;
+}
+
+/* Медиа-запросы */
+
+@media (min-width: 441px) and (max-width: 834px) {
+    .header {
+        flex-wrap: wrap;
+        padding: 10px 20px;
+    }
+
+    .search {
+        min-width: 350px;
+        font-size: 20px;
+    }
+
+    .abtn {
+        margin-left: 10px;
+    }
+
+    .main,
+    .resep,
+    .blog,
+    .con {
+        display: none;
+    }
+
+    .firstlogo,
+    .secondlogo {
+        font-size: 28px;
+    }
+
+    .main_block {
+        padding: 60px 10px;
+    }
+
+    .mh {
+        font-size: 48px;
+    }
+
+    .mh2 {
+        font-size: 28px;
+    }
+
+    .button1 {
+        font-size: 20px;
+        width: 180px;
+        height: 50px;
+    }
+
+    .recipe1,
+    .recipe2,
+    .recipe3 {
+        width: 300px;
+        height: auto;
+    }
+
+    .recipe1txt,
+    .recipe2txt,
+    .recipe3txt {
+        font-size: 26px;
+    }
+
+    .recipe1btn,
+    .recipe2btn,
+    .recipe3btn {
+        margin-top: 10px;
+        padding: 5px;
+    }
+
+    .ffrs {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .imgcontainer {
+        width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .modalname {
+        font-size: 32px;
+        padding-bottom: 8%;
+    }
+
+    .modalcookandtime {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .modalcook,
+    .modaltime {
+        font-size: 18px;
+    }
+
+    .ingredients,
+    .instructions {
+        font-size: 18px;
+        padding: 0 20px;
+    }
+
+    .ingr,
+    .inst {
+        font-size: 26px;
+    }
+
+    .dots {
+        margin: 0 40px;
+    }
+
+    .ingrli {
+        padding-left: 50%;
+    }
+
+    .overlay {
+        width: 80%;
+        border-radius: 30px;
+    }
+
+    .modalimg {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 440px) {
+    .header {
+        flex-wrap: wrap;
+        padding: 10px 16px;
+    }
+
+    .recipe1btn,
+    .recipe2btn,
+    .recipe3btn {
+        margin-top: 10px;
+        padding: 5px;
+    }
+
+    .search {
+        min-width: 160px;
+        font-size: 18px;
+    }
+
+    .main,
+    .resep,
+    .blog,
+    .con {
+        display: none;
+    }
+
+    .firstlogo,
+    .secondlogo {
+        font-size: 24px;
+    }
+
+    .main_block {
+        padding: 40px 10px;
+    }
+
+    .mh {
+        font-size: 36px;
+    }
+
+    .mh2 {
+        font-size: 24px;
+    }
+
+    .button1 {
+        font-size: 18px;
+        width: 160px;
+        height: 45px;
+    }
+
+    .recipe1,
+    .recipe2,
+    .recipe3 {
+        width: 100%;
+        height: auto;
+    }
+
+    .recipe1txt,
+    .recipe2txt,
+    .recipe3txt {
+        font-size: 22px;
+    }
+
+    .ffrs {
+        grid-template-columns: 1fr;
+    }
+
+    .imgcontainer {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .ftr {
+        display: none;
+    }
+
+    .modalname {
+        font-size: 24px;
+        padding-bottom: 10%;
+    }
+
+    .modalcookandtime {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .modalcook,
+    .modaltime {
+        justify-content: center;
+        font-size: 16px;
+    }
+
+    .ingredients,
+    .instructions {
+        font-size: 16px;
+        padding: 0 10px;
+    }
+
+    .ingr,
+    .inst {
+        font-size: 22px;
+    }
+
+    .dots {
+        margin: 0 20px;
+    }
+
+    .ingrli {
+        padding-left: 0;
+    }
+
+    .overlay {
+        width: 90%;
+        border-radius: 20px;
+    }
+
+    .modalimg {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .instructions {
+        padding-left: 20px;
+    }
+}
