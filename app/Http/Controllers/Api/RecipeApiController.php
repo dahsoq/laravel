@@ -14,7 +14,7 @@ class RecipeApiController extends Controller
         if (!$query)
             return response()->json([]);
 
-        // Разделим по запятой и уберем пробелы
+        
         $keywords = array_filter(array_map('trim', explode(',', $query)));
 
         $recipes = Recipe::where(function ($q) use ($keywords) {

@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        // Вот здесь регистрируем route middleware
+     
         $middleware->alias([
             'admin' => AdminOnly::class,
         ]);

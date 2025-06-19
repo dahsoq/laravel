@@ -8,14 +8,13 @@ use Illuminate\Support\Facades\Auth;
 
 class RecipeController extends Controller
 {
-    // Показываем список рецептов
+
     public function index()
     {
         $recipes = Recipe::with(['details', 'ingredients'])->get();
         return view('fastFoodCategory', compact('recipes'));
     }
 
-    // Сохраняем новый рецепт с деталями и ингредиентами
     public function store(Request $request)
     {
         $validated = $request->validate([
@@ -31,13 +30,13 @@ class RecipeController extends Controller
             'ingredients.*.amount' => 'required|string',
         ]);
 
-        // Загрузка изображения
+       
         $image = $request->file('imgpath');
         $filename = time() . '_' . $image->getClientOriginalName();
         $image->move(public_path('Image'), $filename);
         $validated['imgpath'] = 'Image/' . $filename;
 
-        // Создаем рецепт
+       
         $recipe = Recipe::create([
             'name' => $validated['name'],
             'description' => $validated['description'],
@@ -46,13 +45,12 @@ class RecipeController extends Controller
             'imgpath' => $validated['imgpath'],
         ]);
 
-        // Создаем детали рецепта
+       
         $recipe->details()->create([
             'servings' => $validated['servings'],
             'instruction' => $validated['instruction'],
         ]);
 
-        // Создаем ингредиенты
         foreach ($validated['ingredients'] as $ingredient) {
             $recipe->ingredients()->create($ingredient);
         }
@@ -73,7 +71,6 @@ class RecipeController extends Controller
 
 
 
-    // Возвращаем рецепт с деталями и ингредиентами в формате JSON (для JS)
     public function showJson($id)
     {
         $recipe = Recipe::with(['details', 'ingredients'])->findOrFail($id);

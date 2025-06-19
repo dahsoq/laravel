@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const loginChoice = document.querySelector("#loginChoice");
     const registerChoice = document.querySelector("#registerChoice");
 
-    const openBtn = document.querySelector(".accountcab"); // Только если пользователь не авторизован
+    const openBtn = document.querySelector(".accountcab"); // только если пользователь не авторизован
     const closeBtns = document.querySelectorAll(".authclosebtn");
 
-    // Открытие формы входа
+    //формы входа
     if (openBtn && loginForm && registerForm && overlay) {
         openBtn.addEventListener("click", function () {
             overlay.classList.add("open");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Переключение между формами
+    
     if (registerChoice && loginForm && registerForm) {
         registerChoice.addEventListener("click", function () {
             registerForm.classList.add("open");
@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Закрытие форм по кнопке "X"
     closeBtns.forEach((btn) => {
         btn.addEventListener("click", function () {
             loginForm.classList.remove("open");

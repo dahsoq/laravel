@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
     searchInput.addEventListener('input', function () {
         const query = this.value.trim();
 
-        // Только если мы на странице, где есть рецепты
         const container = document.querySelector('.ffrs');
         if (!container) return;
 
